@@ -4,7 +4,7 @@ import modules.users.repositories.CsvRolesRepo
 import modules.users.repositories.CsvUserRepo
 import modules.users.repositories.PermissionEventRepoSql
 import modules.users.repositories.UserProfileRepoSql
-import modules.users.useCases.uploadCsv.createCsvUseCase
+import modules.users.useCases.uploadCsvFile.uploadCsvFile
 import java.io.File
 import java.sql.Connection
 import java.sql.DriverManager
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
     val permissionEventRepo = PermissionEventRepoSql(sqlConnection = sqlConnection)
     val userProfileRepo = UserProfileRepoSql(sqlConnection = sqlConnection)
 
-    createCsvUseCase(
+    uploadCsvFile(
         userCsvRepo = csvUserRepo,
         userRoleCsvRepo = csvRolesRepo,
         permissionsEventRepo = permissionEventRepo,

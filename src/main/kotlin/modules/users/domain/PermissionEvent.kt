@@ -28,18 +28,18 @@ enum class PermissionEvent(val id: Int) {
         }
 
         fun canWrite(ids: List<Int>): Boolean {
-            return this._can(ids, 2, 5)
+            return this.hasPermission(ids, 2, 5)
         }
 
         fun canRead(ids: List<Int>): Boolean {
-            return this._can(ids, 1, 4)
+            return this.hasPermission(ids, 1, 4)
         }
 
         fun canDelete(ids: List<Int>): Boolean {
-            return this._can(ids, 3, 6)
+            return this.hasPermission(ids, 3, 6)
         }
 
-        fun _can(ids: List<Int>, addId: Int, removeId: Int): Boolean {
+        private fun hasPermission(ids: List<Int>, addId: Int, removeId: Int): Boolean {
 
             val add = ids.indexOf(addId)
             val remove = ids.indexOf(removeId)

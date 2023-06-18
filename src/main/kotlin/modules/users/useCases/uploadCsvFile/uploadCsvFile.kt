@@ -1,4 +1,4 @@
-package modules.users.useCases.uploadCsv
+package modules.users.useCases.uploadCsvFile
 
 import modules.users.domain.PermissionEvent
 import modules.users.domain.UserEntity
@@ -8,7 +8,7 @@ import modules.users.repositories.CsvUserRepo
 import modules.users.repositories.PermissionsEventRepo
 import modules.users.repositories.UserProfileRepo
 
-class createCsvUseCase(
+class uploadCsvFile(
     userCsvRepo: CsvUserRepo,
     userRoleCsvRepo: CsvRolesRepo,
     permissionsEventRepo: PermissionsEventRepo,
